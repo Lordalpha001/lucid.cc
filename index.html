@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucid.cc</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .audio-icon {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .audio-toggle {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      outline: none;
+    }
+
+    .audio-toggle.active .audio-icon {
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -13,15 +34,33 @@
     <div class="tagline">Revolutionizing CS2 Cheating</div>
     <div class="tagline blur" id="coming-soon">Coming November 2024</div>
     <div class="button-container">
-        <button class="cta-button" onclick="window.location.href='https://discord.gg/TVaeNHYFGb';">Discord</button>
-      </div>
-      
+      <button class="cta-button" onclick="window.location.href='https://discord.gg/TVaeNHYFGb';">Discord</button>
+    </div>
   </header>
-  <img src="https://cdn.discordapp.com/attachments/1268298838977019936/1300664690627842140/New_Project_9.png?ex=6721a9e3&is=67205863&hm=8b63587dc965436acd9298f0fb47c3ccb82773a9d327d98ab42fd03d1e3a0674&" alt="Logo" class="bottom-left-image">
+  <img src="skibid.png" alt="Logo" class="bottom-left-image">
   
+  <audio id="background-audio" src="song.mp3" preload="auto"></audio>
+  
+  <button id="audio-button" class="audio-toggle">
+    <img src="volume.png" alt="Volume Icon" class="audio-icon">
+  </button>
+
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
   <script>
+    const audio = document.getElementById('background-audio');
+    const audioButton = document.getElementById('audio-button');
+
+    audioButton.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+        audioButton.classList.add('active');
+      } else {
+        audio.pause();
+        audioButton.classList.remove('active');
+      }
+    });
+    
     document.getElementById('coming-soon').addEventListener('click', function() {
       this.classList.remove('blur');
     });
