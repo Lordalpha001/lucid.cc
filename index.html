@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucid.cc</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header class="fade-in">
+    <div class="logo">Lucid.cc</div>
+    <div class="tagline">Revolutionizing CS2 Cheating</div>
+    <div class="tagline blur" id="coming-soon">Coming November 2024</div>
+    <div class="button-container">
+        <button class="cta-button" onclick="window.location.href='https://discord.gg/TVaeNHYFGb';">Discord</button>
+      </div>
+      
+  </header>
+  <img src="https://cdn.discordapp.com/attachments/1268298838977019936/1300664690627842140/New_Project_9.png?ex=6721a9e3&is=67205863&hm=8b63587dc965436acd9298f0fb47c3ccb82773a9d327d98ab42fd03d1e3a0674&" alt="Logo" class="bottom-left-image">
+  
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('coming-soon').addEventListener('click', function() {
+      this.classList.remove('blur');
+    });
+  </script>
+</body>
+</html>
